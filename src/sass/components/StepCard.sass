@@ -1,0 +1,50 @@
+@use '../colors' as c
+@use '../typography' as t
+
+.step
+  &-card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: 1.5rem 1rem
+  &-img
+    flex-shrink: 0
+  &-text
+    &-container
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 1rem
+      max-width: 21.4rem
+    &--step
+      font-family: t.$Gadugi
+      color: c.$active-blue
+      line-height: 1.5rem
+      word-spacing: 1.28px
+    &--title
+      font-family: t.$Caveat-Brush
+      color: c.$main-text
+      font-size: 2rem
+      white-space: nowrap
+    &--description
+      color: c.$main-text
+      line-height: 1.5rem
+      text-align: center
+@media only screen and (min-width: 992px)
+  .step
+    &-card
+      flex-direction: row
+      gap: 3rem
+      &:nth-of-type(2)
+        flex-direction: row-reverse
+    &-text
+      &--step
+        font-size: 1.25rem
+      &-container
+        align-items: flex-start
+        max-width: 16rem
+      &--description
+        text-align: start
+        font-size: 1.25rem
+        line-height: 2rem

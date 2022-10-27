@@ -1,0 +1,13 @@
+@use './normalize'
+@use './colors' 
+@use './typography'
+@use "./components/Navbar"
+@use "./components/LandingPg"
+@use './components/Footer'
+
+html *
+  font-family: typography.$Noto-Sans
+
+header,main,section
+  border: colors.$border
+  border-top: none

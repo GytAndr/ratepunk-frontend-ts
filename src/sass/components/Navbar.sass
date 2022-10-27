@@ -1,0 +1,84 @@
+@use '../typography' as t
+@use '../colors' as c
+
+.header
+  &-logo
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: .25rem 0rem .25rem 1rem
+
+  &-btn
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 3rem
+    height: 3rem
+    cursor: pointer
+    transition: all .25s ease-in-out 0s
+    &--burger
+      width: 18px
+      height: 4px
+      background-color: #bdc1c3
+      border: 1px #000 solid
+      border-radius: 100px
+      transition: all .25s ease-in-out 0s
+      &::before,&::after
+        content: ''
+        position: absolute
+        top: 22px
+        right: 15px
+        width: 18px
+        height: 4px
+        background-color: #bdc1c3
+        border: 1px #000 solid
+        border-radius: 100px
+        transition: all .25s ease-in-out
+      &::before
+        transform: translateY(-6px)
+      &::after
+        transform: translateY(6px)
+  /*BUTTON ANIMATIONS*/
+  .header-btn.open .header-btn--burger
+    border: none
+    background: none
+  .header-btn.open .header-btn--burger::before
+    transform: rotate(45deg)
+  .header-btn.open .header-btn--burger::after
+    transform: rotate(-45deg)
+
+  nav
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    gap: 8px
+    height: 0
+    transition: .35s ease-in-out
+    a
+      padding: .5rem 1rem
+    a:hover
+      color: c.$active-blue
+  .expanded
+    height: 150px
+
+@media only screen and (min-width: 992px)
+  .header
+    padding: 0 2rem
+    &-wrapper
+      max-width: 1120px
+      margin: 0 auto
+      height: 80px
+      display: flex
+      justify-content: space-between
+    &-logo
+      padding: 0.25rem 0
+    &-btn
+      display: none
+    nav
+      height: auto
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      a
+        font-size: 1.25rem

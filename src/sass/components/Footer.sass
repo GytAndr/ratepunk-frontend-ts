@@ -1,0 +1,114 @@
+@use '../colors' as c
+@use '../typography' as t
+
+.footer
+  color: c.$main-text
+  &-stores
+    background-color: c.$bg-footer--dark
+    padding: 2rem
+    &-rating
+      display: flex
+      color: c.$bg-white
+      gap: 4px
+      margin-top: .5rem
+      p
+        margin-left: 1rem
+        white-space: nowrap
+  &-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 1rem
+
+  &-store
+    border: c.$border
+    border-radius: 1rem
+    padding: 0.875rem 1.5rem
+    display: flex
+    gap: 1.25rem
+    width: 19.5rem
+
+    &-imgWrapper
+      display: flex
+    &-text--avail,&-text--loc
+      color: c.$bg-footer--light
+
+    &-text--loc
+      font-weight: bold
+      font-size: 1.25rem
+
+  &-nav
+    background-color: c.$bg-footer--light
+    padding: 2rem
+    &-description
+      display: flex
+      flex-direction: column
+      gap: 2rem
+      margin-top: 3rem
+    &-links
+      display: flex
+      flex-direction: column
+      margin-top: 3rem
+      gap: 1rem
+      a:hover
+        color: c.$active-blue
+        transition: color .25s ease-in-out 0s
+    &-contacts
+      margin-top: 2rem
+      display: flex
+      flex-direction: column
+      gap: 1.5rem
+      &-email
+        display: flex
+        gap: 1rem
+    &-socials
+      display: flex
+      gap: 0.5rem
+      &-wrapper
+        background-color: c.$active-blue
+        border: c.$border
+        border-radius: .5rem
+        padding: .5rem
+        display: flex
+        &:hover
+          background-color: c.$bg-yellow
+          transition: background-color .25s ease-in-out 0s
+
+    &-rights
+      margin: 3rem 0
+      color: c.$grey-text
+    &-wrapper
+      display: grid
+      max-width: 320px
+      margin: 0 auto
+@media only screen and (min-width: 992px)
+  .footer
+    &-wrapper
+      flex-direction: row
+      max-width: 1120px
+      margin: 0 auto
+    &-stores-rating
+      margin-left: 1rem
+      & > p
+        font-size: 1.25rem
+    &-nav
+      padding: 4rem 2rem 3.625rem
+      h4
+        font-size: 1.25rem
+      &-wrapper
+        max-width: 1120px
+        grid-template-columns: 1fr 1fr 8rem 1fr 1fr
+      &-description,&-contacts,&-links,&-rights
+        margin: 0
+      &-description,&-rights
+        grid-column: 1/3
+      &-links
+        grid-column: 4/5
+        grid-row: 1/3
+        justify-content: space-between
+      &-contacts
+        grid-column: 5/6
+        grid-row: 1/3
+        justify-content: space-between
+      &-rights
+        align-self: flex-end
